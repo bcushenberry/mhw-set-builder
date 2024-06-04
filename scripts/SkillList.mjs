@@ -8,15 +8,16 @@ skillUrl.searchParams.set("p", JSON.stringify({
     name: true,
 }));
 
-/* Get a list of all skills from the API using an async function */
+// Get a list of all skills from the API using an async function
 export const getSkills = async () => {
     const response = await fetch(skillUrl);
     skillsList = await response.json();
     displaySkills(skillsList);
 };
-    /* ========== Drop-down Menu ========== */
 
-/* Add each skill name to the pull-down menu */
+/* ========== Drop-down Menu ========== */
+
+// Add each skill name to the pull-down menu
 const displaySkills = (skills) => {
     skills.forEach((skill) =>
     {
