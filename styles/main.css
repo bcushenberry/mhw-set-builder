@@ -1,0 +1,163 @@
+/* Universal Selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HTML Selectors */
+body {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    padding-bottom: 50px;
+}
+
+nav {
+    background-color: #0D1B2A;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    margin: 0 auto;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 10px;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    background-color: #efefef;
+    color: black;
+}
+
+header {
+    margin-top: 70px;
+}
+
+section {
+    color: #1B263B;
+}
+
+dt {
+    font-weight: 700;
+}
+
+dd {
+    margin: 0 0 .5rem 2rem;
+    font-size: smaller;
+}
+
+footer {
+    background-color: #0D1B2A;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+}
+
+/* ID Selectors */
+#home {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+#top {
+    text-align: center;
+}
+
+#top h1, div {
+    margin-bottom: .5rem;
+}
+
+#introduction {
+    align-items: center;
+}
+
+#loadingImg {
+    margin-right: .25rem;
+    margin-top: .25rem;
+    max-width: 40px;
+    animation: spin 2s linear infinite;
+}
+
+#loadingIndicator {
+    display: none;
+    text-align: center;
+}
+
+#armorResults, #buildDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto 1rem;
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding: 1rem;
+    background-color: #eee;
+    list-style: none;
+}
+
+#armorList dt::before {
+    content: "🛡️";
+}
+
+#armorList dt {
+    font-size: small;
+}
+
+#armorList {
+    width: 70vw;
+    columns: 2;
+}
+
+/* Media Queries */
+@media only screen and (min-width: 650px) {
+    #home > section:nth-child(2){
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    #armorList {
+        width: 25vw;
+        text-align: center;
+        columns: 1;
+    }
+
+    #buildDetails {
+        width: 50vw;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    #armorList {
+        text-align: left;
+        columns: 2;
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
