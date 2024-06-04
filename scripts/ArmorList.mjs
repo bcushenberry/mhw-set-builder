@@ -7,6 +7,7 @@ export let armorList = [];
 
 /* ========== API Call ========== */
 
+// Use "p" to specify which fields to grab from the API
 const armorURL = new URL("https://mhw-db.com/armor");
 armorURL.searchParams.set("p", JSON.stringify({
         type: true,

@@ -3,6 +3,7 @@ export let skillsList = [];
 
 /* ========== API Call ========== */
 
+// Use "p" to specify which fields to grab from the API
 const skillUrl = new URL("https://mhw-db.com/skills");
 skillUrl.searchParams.set("p", JSON.stringify({
     name: true,
@@ -10,9 +11,14 @@ skillUrl.searchParams.set("p", JSON.stringify({
 
 // Get a list of all skills from the API using an async function
 export const getSkills = async () => {
-    const response = await fetch(skillUrl);
-    skillsList = await response.json();
-    displaySkills(skillsList);
+    try {
+        const response = await fetch(skillUrl);
+        skillsList = await response.json();
+        displaySkills(skillsList);
+    }
+    catch (error) {
+        console.error("Failed to load skill list:", error);        
+    }
 };
 
 /* ========== Drop-down Menu ========== */
