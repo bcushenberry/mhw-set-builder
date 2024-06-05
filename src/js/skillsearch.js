@@ -1,9 +1,5 @@
 import { getSkills } from "./SkillList.mjs";
-import {
-  getArmorList,
-  displayMatchingArmor,
-  armorList,
-} from "./ArmorList.mjs";
+import { getArmorList, displayMatchingArmor, armorList } from "./ArmorList.mjs";
 
 import { displayBuild } from "./BuildList.mjs";
 
