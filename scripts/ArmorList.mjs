@@ -1,7 +1,8 @@
 import { skillsList  } from "./SkillList.mjs"
 import { selectedRank } from "./RadioValue.mjs"
+import { createAddButton, createRemoveButton } from "./EditBuild.mjs";
 
-const armorListElement = document.getElementById("armorList");
+export const armorListElement = document.getElementById("armorList");
 export const rankElement = document.getElementById("rank")
 export let armorList = [];
 
@@ -39,11 +40,13 @@ export const getArmorList = async () => {
 /* ========== Armor List Display - All ========== */
 
 // A function to display all the armor pieces and their skills
-const displayArmorList = (armors) => {
+export const displayArmorList = (armors) => {
     armors.forEach((armor) => {
         if (selectedRank === armor.rank) {
             let armorPiece = document.createElement("dt");
             let armorSkills = document.createElement("dd");
+            let armorButtons = document.createElement("span");
+            armorButtons.setAttribute("class", "armor-buttons");
 
             armorPiece.textContent = armor.name;
 
@@ -53,9 +56,10 @@ const displayArmorList = (armors) => {
         
                 // Check for multiple skillName objects in a skill array. If so, add them all to the skill list
                 if (Array.isArray(skill.skillName)) {
-                    skill.skillName.forEach((name) => {
+                    skill.skillName.forEach((name, index) => {
+                        let skillLevel = skill.level[index];
                         armorSkillsList.value = name;                
-                        armorSkillsList.textContent = name;
+                        armorSkillsList.textContent = `${name} Lv. ${skillLevel}`;
                         armorSkills.appendChild(armorSkillsList);
                     });
                 } 
@@ -63,14 +67,14 @@ const displayArmorList = (armors) => {
                 // Otherwise, just add the skill name to the list
                 else {
                     armorSkillsList.value = skill.skillName;
-                    armorSkillsList.textContent = skill.skillName;
+                    armorSkillsList.textContent = `${skill.skillName} Lv. ${skill.level}`;
                     armorSkills.appendChild(armorSkillsList);
                 }
             });
         
             // Add all the armor pieces and their skill lists to the armor list
-            document.querySelector("#armorList").append(armorPiece);
-            document.querySelector("#armorList").append(armorSkills);
+            armorButtons.append(createRemoveButton(), createAddButton())
+            armorListElement.append(armorButtons, armorPiece, armorSkills);
     }
 });
 };

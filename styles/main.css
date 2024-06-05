@@ -54,15 +54,6 @@ section {
     color: #1B263B;
 }
 
-dt {
-    font-weight: 700;
-}
-
-dd {
-    margin: 0 0 .5rem 2rem;
-    font-size: smaller;
-}
-
 footer {
     background-color: #0D1B2A;
     color: white;
@@ -119,41 +110,58 @@ footer {
     list-style: none;
 }
 
+#armorHeading {
+    margin-bottom: .5rem;
+}
+
+#armorList {
+    width: 70vw;
+}
+
 #armorList dt::before {
     content: "🛡️";
 }
 
 #armorList dt {
-    font-size: small;
+    font-weight: 700;
+    margin-right: 1rem;
 }
 
-#armorList {
-    width: 70vw;
-    columns: 2;
+#armorList dd {
+    margin: 0 0 .5rem 1.5rem;
+    font-size: smaller;
+}
+
+.armor-buttons {
+    display: flex;
+    justify-content: right;
+    margin-bottom: -1.5rem;
+}
+
+.buttons {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /* Media Queries */
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 700px) {
     #home > section:nth-child(2){
         display: grid;
         grid-template-columns: 1fr 2fr;
     }
 
+    #armorResults {
+        margin-left: .5rem;
+    }
+
     #armorList {
-        width: 25vw;
-        text-align: center;
-        columns: 1;
+        width: 350px;
     }
 
     #buildDetails {
-        width: 50vw;
-    }
-}
-
-@media only screen and (min-width: 1000px) {
-    #armorList {
-        text-align: left;
-        columns: 2;
+        margin-left: .5rem;
+        margin-right: .5rem;
+        min-width: 350px;
     }
 }
 
