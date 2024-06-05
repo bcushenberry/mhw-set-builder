@@ -1,66 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monster Hunter World: Set Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monster Hunter World: Set Builder </title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css">
-</head>
+  <body>
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Monster Hunter World: Set Builder</a></li>
+      </ul>
+    </nav>
 
-<body>
-  <nav>
-    <ul id="menu">
-      <li><a href="index.html">Monster Hunter World: Set Builder</a></li>
-    </ul>
-  </nav>
+    <main id="home">
+      <section id="top">
+        <h1>Monster Hunter World<br />Set Builder</h1>
+        <div id="introduction">
+          Welcome, hunter! Ready to make your build?<br />
+          Let's start by selecting an armor skill:
+        </div>
+        <div id="skillSelector">
+          <select id="skillsList" title="Choose a skill.">
+            <option value="none">Choose a skill</option>
+            <option value="all">All</option>
+          </select>
+        </div>
+        <div id="rankSelector">
+          <p>Now select your rank:</p>
+          <br />
+          <form id="rank">
+            <input
+              type="radio"
+              id="low-rank"
+              name="select-rank"
+              value="low"
+              checked
+            />
+            <label for="low-rank">Low</label>
+            <input
+              type="radio"
+              id="high-rank"
+              name="select-rank"
+              value="high"
+            />
+            <label for="high-rank">High</label>
+            <input
+              type="radio"
+              id="master-rank"
+              name="select-rank"
+              value="master"
+            />
+            <label for="master-rank">Master</label>
+          </form>
+        </div>
+        <div id="loadingIndicator">
+          <img
+            id="loadingImg"
+            src="./images/melynx-img-s.png"
+            alt="Palico smiley face courtesy of jinsuke04"
+          />Loading data...
+        </div>
+      </section>
+      <section>
+        <div id="armorResults">
+          <h2 id="armorHeading">Armor List</h2>
+          <dl id="armorList"></dl>
+        </div>
+        <div id="buildDetails">
+          <h2>Build Details</h2>
+          <dl id="buildList"></dl>
+        </div>
+      </section>
+    </main>
 
-  <main id="home">
-    <section id="top">
-      <h1>Monster Hunter World<br>Set Builder</h1>
-      <div id="introduction">
-        Welcome, hunter! Ready to make your build?<br>
-        Let's start by selecting an armor skill:
-      </div>
-      <div id="skillSelector">
-        <select id="skillsList" title="Choose a skill.">
-          <option value="none">Choose a skill</option>
-          <option value="all">All</option>
-        </select>
-      </div>
-      <div id="rankSelector">
-        <p>Now select your rank:</p><br>
-        <form id="rank">
-          <input type="radio" id="low-rank" name="select-rank" value="low" checked>
-          <label for="low-rank">Low</label>
-          <input type="radio" id="high-rank" name="select-rank" value="high">
-          <label for="high-rank">High</label>
-          <input type="radio" id="master-rank" name="select-rank" value="master">
-          <label for="master-rank">Master</label>
-        </form> 
-      </div>
-      <div id="loadingIndicator"><img id="loadingImg" src="./images/melynx-img-s.png" alt="Palico smiley face courtesy of jinsuke04"></img>Loading data...</div>
-    </section>
-    <section>
-      <div id="armorResults">
-        <h2 id="armorHeading">Armor List</h2>
-        <dl id="armorList"></dl>
-      </div>
-      <div id="buildDetails">
-        <h2>Build Details</h2>
-        <dl id="buildList"></dl>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    &copy;<span id="year">2024</span> | Brandon Cushenberry
-  </footer>
-  <script type="module" src="scripts/skillsearch.js"></script>
-</body>
-
+    <footer>&copy;<span id="year">2024</span> | Brandon Cushenberry</footer>
+    <script type="module" src="scripts/skillsearch.js"></script>
+  </body>
 </html>

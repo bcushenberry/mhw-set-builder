@@ -1,172 +1,178 @@
 /* Universal Selector */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* HTML Selectors */
 body {
-    font-family: 'Roboto', Helvetica, sans-serif;
-    padding-bottom: 50px;
+  font-family: "Roboto", Helvetica, sans-serif;
+  padding-bottom: 50px;
 }
 
 nav {
-    background-color: #0D1B2A;
-    width: 100%;
-    position: fixed;
-    top: 0;
+  background-color: #0d1b2a;
+  width: 100%;
+  position: fixed;
+  top: 0;
 }
 
 nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: -moz-fit-content;
-    max-width: fit-content;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: 0 auto;
 }
 
 nav ul li {
-    list-style: none;
-    margin: 10px;
+  list-style: none;
+  margin: 10px;
 }
 
 nav ul li a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    font-weight: 600;
-    color: white;
-    text-align: center;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  text-align: center;
 }
 
 nav ul li a:hover {
-    background-color: #efefef;
-    color: black;
+  background-color: #efefef;
+  color: black;
 }
 
 header {
-    margin-top: 70px;
+  margin-top: 70px;
 }
 
 section {
-    color: #1B263B;
+  color: #1b263b;
 }
 
 footer {
-    background-color: #0D1B2A;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    width: 100%;
-    height: 50px;
-    position: fixed;
-    bottom: 0;
+  background-color: #0d1b2a;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
 }
 
 /* ID Selectors */
 #home {
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    grid-gap: 20px;
-    align-items: center;
-    justify-content: center;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 #top {
-    text-align: center;
+  text-align: center;
 }
 
-#top h1, div {
-    margin-bottom: .5rem;
+#top h1,
+div {
+  margin-bottom: 0.5rem;
 }
 
 #introduction {
-    align-items: center;
+  align-items: center;
 }
 
 #loadingImg {
-    margin-right: .25rem;
-    margin-top: .25rem;
-    max-width: 40px;
-    animation: spin 2s linear infinite;
+  margin-right: 0.25rem;
+  margin-top: 0.25rem;
+  max-width: 40px;
+  animation: spin 2s linear infinite;
 }
 
 #loadingIndicator {
-    display: none;
-    text-align: center;
+  display: none;
+  text-align: center;
 }
 
-#armorResults, #buildDetails {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto 1rem;
-    border: 1px solid rgba(0, 0, 0, .1);
-    padding: 1rem;
-    background-color: #eee;
-    list-style: none;
-    min-width: 450px;
+#armorResults,
+#buildDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  background-color: #eee;
+  list-style: none;
+  min-width: 450px;
 }
 
 #armorHeading {
-    margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 #armorList {
-    width: 70vw;
+  width: 70vw;
 }
 
 #armorList dt::before {
-    content: "🛡️";
+  content: "🛡️";
 }
 
 #armorList dt {
-    font-weight: 700;
-    margin-right: 1rem;
+  font-weight: 700;
+  margin-right: 1rem;
 }
 
 #armorList dd {
-    margin: 0 0 .5rem 1.5rem;
-    font-size: smaller;
+  margin: 0 0 0.5rem 1.5rem;
+  font-size: smaller;
 }
 
 .armor-buttons {
-    display: flex;
-    justify-content: right;
-    margin-bottom: -1.5rem;
+  display: flex;
+  justify-content: right;
+  margin-bottom: -1.5rem;
 }
 
 .buttons {
-    padding-left: 10px;
-    padding-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /* Media Queries */
 @media only screen and (min-width: 700px) {
-    #home > section:nth-child(2){
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-    }
+  #home > section:nth-child(2) {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
 
-    #armorResults {
-        margin-left: .5rem;
-    }
+  #armorResults {
+    margin-left: 0.5rem;
+  }
 
-    #armorList {
-        width: 350px;
-    }
+  #armorList {
+    width: 350px;
+  }
 
-    #buildDetails {
-        margin-left: .5rem;
-        margin-right: .5rem;
-        min-width: 350px;
-    }
+  #buildDetails {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    min-width: 350px;
+  }
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
