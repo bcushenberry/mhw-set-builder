@@ -26,7 +26,9 @@ export function createRemoveButton(key) {
     removeButton.setAttribute("class", "buttons")
     removeButton.textContent = " - ";
     removeButton.addEventListener("touchend", (event) => {
-      event.preventDefault(); 
+      if (event.cancelable) {
+        event.preventDefault();
+      }
       setLocalStorage(key, "");
     });
     

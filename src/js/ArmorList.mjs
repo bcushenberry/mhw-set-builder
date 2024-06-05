@@ -9,8 +9,8 @@ export let armorList = [];
 /* ========== API Call ========== */
 
 // Use "p" to specify which fields to grab from the API
-const armorURL = new URL("https://mhw-db.com/armor");
-armorURL.searchParams.set("p", JSON.stringify({
+const armorUrl = new URL("https://mhw-db.com/armor");
+armorUrl.searchParams.set("p", JSON.stringify({
     type: true,
     rank: true,
     rarity: true,
@@ -26,7 +26,7 @@ armorURL.searchParams.set("p", JSON.stringify({
 export const getArmorList = async () => {
     showLoadingIndicator();
     try {
-        const response = await fetch(armorURL);
+        const response = await fetch(armorUrl);
         armorList = await response.json();
     }
     catch (error) {

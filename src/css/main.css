@@ -13,41 +13,30 @@ body {
 
 nav {
   background-color: #0d1b2a;
-  width: 100%;
-  position: fixed;
-  top: 0;
-}
-
-nav ul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
-  margin: 0 auto;
-}
-
-nav ul li {
-  list-style: none;
-  margin: 10px;
-}
-
-nav ul li a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  font-weight: 600;
   color: white;
   text-align: center;
-}
-
-nav ul li a:hover {
-  background-color: #efefef;
-  color: black;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
 header {
   margin-top: 70px;
+}
+
+input[type="radio"] {
+  margin-left: .25rem;
+  margin-right: 3px;
+}
+
+input[type="radio"]:checked {
+  transform: scale(1.4);
+} 
+
+select:focus {
+  transform: scale(1.2);
 }
 
 section {
@@ -71,6 +60,34 @@ footer {
 }
 
 /* ID Selectors */
+#menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: 0 auto;
+}
+
+#menu li {
+  list-style: none;
+  margin: 10px;
+}
+
+#menu li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+}
+
+#menu li a:hover {
+  background-color: #efefef;
+  color: black;
+}
+
 #home {
   margin-top: 100px;
   display: flex;
@@ -126,15 +143,28 @@ div {
   width: 70vw;
 }
 
-/* #armorList dt::before {
+#armorList dt::before {
   content: "🛡️";
-} */
+}
 
 #armorList dd {
   margin: 0 0 0.5rem 0.5rem;
   font-size: smaller;
 }
 
+#buildList {
+  margin-top: 0.5rem;
+}
+
+#buildList img {
+  transform: translate(-200%);
+}
+
+#buildList h3 {
+  transform: translate(-30%);
+}
+
+/* Class Selectors */
 .armor-buttons {
   display: flex;
   justify-content: right;
@@ -144,10 +174,6 @@ div {
 .buttons {
   padding-left: 10px;
   padding-right: 10px;
-}
-
-#buildList {
-  margin-top: 0.5rem;
 }
 
 .slot {
@@ -164,9 +190,15 @@ div {
 /* Media Queries */
 @media only screen and (max-width: 475px) {
   .armor-buttons {
-    margin-right: -2rem;
+    position: absolute;
+    transform: translate(400%);
+  }
+
+  #armorList dt {
+    transform: translate(-10%)
   }
 }
+
 @media only screen and (min-width: 700px) {
   #home > section:nth-child(2) {
     display: grid;
