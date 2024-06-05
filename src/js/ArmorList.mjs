@@ -11,16 +11,16 @@ export let armorList = [];
 // Use "p" to specify which fields to grab from the API
 const armorURL = new URL("https://mhw-db.com/armor");
 armorURL.searchParams.set("p", JSON.stringify({
-        type: true,
-        rank: true,
-        rarity: true,
-        defense: true,
-//        resistances: true, <-- may be used later
-        name: true,
-        slots: true,
-        skills: true,
-//        armorSet: true, <-- may be used later
-//        crafting: true, <-- may be used later
+    type: true,
+    rank: true,
+    rarity: true,
+    defense: true,
+//    resistances: true, <-- may be used later
+    name: true,
+    slots: true,
+    skills: true,
+//    armorSet: true, <-- may be used later
+//    crafting: true, <-- may be used later
 }));
 
 export const getArmorList = async () => {
@@ -105,6 +105,7 @@ export const displayMatchingArmor = (matchingArmor) => {
     // Check to see if the current skillList.value matches a filter. If so, display all armor pieces in that filter
     if (filterArmor[filter]) {
         filterArmor[filter](matchingArmor);
+        
         // Display message if no matches
         if (armorListElement.children.length === 0) {
             armorListElement.appendChild(noMatchMessage);

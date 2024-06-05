@@ -1,3 +1,5 @@
+import { updateBuild } from "./BuildList.mjs";
+
 // TODO: Make the Add/RemoveButton functions more elegant / less redundant
 // Create the add button to add an item to your build (localstorage)
 export function createAddButton(key, data) {
@@ -7,8 +9,14 @@ export function createAddButton(key, data) {
     addButton.addEventListener("touchend", (event) => {
       event.preventDefault(); 
       setLocalStorage(key, data);
+      updateBuild(key, data);
     });
-    addButton.addEventListener("click", () => setLocalStorage(key, data));
+
+    addButton.addEventListener("click", () => {
+      setLocalStorage(key, data)
+      updateBuild(key, data);
+    });
+
     return(addButton)
 }
 
@@ -21,7 +29,12 @@ export function createRemoveButton(key) {
       event.preventDefault(); 
       setLocalStorage(key, "");
     });
-    removeButton.addEventListener("click", () => setLocalStorage(key, ""));
+    
+    removeButton.addEventListener("click", () => {
+      setLocalStorage(key, "")
+      updateBuild(key, [])
+    });
+    
     return(removeButton)
 }
 
