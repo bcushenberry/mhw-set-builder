@@ -36,11 +36,11 @@
         <p>Now select your rank:</p><br>
         <form id="rank">
           <input type="radio" id="low-rank" name="select-rank" value="low" checked>
-          <label for="low">Low</label>
+          <label for="low-rank">Low</label>
           <input type="radio" id="high-rank" name="select-rank" value="high">
-          <label for="high">High</label>
+          <label for="high-rank">High</label>
           <input type="radio" id="master-rank" name="select-rank" value="master">
-          <label for="master">Master</label>
+          <label for="master-rank">Master</label>
         </form> 
       </div>
       <div id="loadingIndicator"><img id="loadingImg" src="./images/melynx-img-s.png" alt="Palico smiley face courtesy of jinsuke04"></img>Loading data...</div>
@@ -52,6 +52,7 @@
       </div>
       <div id="buildDetails">
         <h2>Build Details</h2>
+        <dl id="buildList"></dl>
       </div>
     </section>
   </main>

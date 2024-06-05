@@ -108,6 +108,7 @@ footer {
     padding: 1rem;
     background-color: #eee;
     list-style: none;
+    min-width: 450px;
 }
 
 #armorHeading {

@@ -1,8 +1,8 @@
 import { skillsList  } from "./SkillList.mjs"
 import { selectedRank } from "./RadioValue.mjs"
 import { createAddButton, createRemoveButton } from "./EditBuild.mjs";
+import { armorListElement, resetArmorList, showLoadingIndicator, hideLoadingIndicator } from "./Utils.mjs";
 
-export const armorListElement = document.getElementById("armorList");
 export const rankElement = document.getElementById("rank")
 export let armorList = [];
 
@@ -15,12 +15,12 @@ armorURL.searchParams.set("p", JSON.stringify({
         rank: true,
         rarity: true,
         defense: true,
-//        resistances: true,
+//        resistances: true, <-- may be used later
         name: true,
         slots: true,
         skills: true,
-//        armorSet: true,
-//        crafting: true,
+//        armorSet: true, <-- may be used later
+//        crafting: true, <-- may be used later
 }));
 
 export const getArmorList = async () => {
@@ -30,6 +30,7 @@ export const getArmorList = async () => {
         armorList = await response.json();
     }
     catch (error) {
+        // eslint-disable-next-line no-console
         console.error("Failed to load armor list:", error);        
     }
     finally {
@@ -45,10 +46,10 @@ export const displayArmorList = (armors) => {
         if (selectedRank === armor.rank) {
             let armorPiece = document.createElement("dt");
             let armorSkills = document.createElement("dd");
-            let armorButtons = document.createElement("span");
-            armorButtons.setAttribute("class", "armor-buttons");
+            let armorButtons = document.createElement("div");
 
             armorPiece.textContent = armor.name;
+            armorButtons.setAttribute("class", "armor-buttons");
 
             // Create a skill list for each armor piece & populate it
             armor.skills.forEach((skill) => {
@@ -73,17 +74,17 @@ export const displayArmorList = (armors) => {
             });
         
             // Add all the armor pieces and their skill lists to the armor list
-            armorButtons.append(createRemoveButton(), createAddButton())
+            armorButtons.append(createRemoveButton(armor.type), createAddButton(armor.type, [armor.name, armor.skills]))
             armorListElement.append(armorButtons, armorPiece, armorSkills);
+        }
     }
-});
-};
+)};
 
 /* ========== Armor List Display - Filtered ========== */
 
 // Display any armor piece that matches the skill selected in the drop-down menu.
-export const displayMatchingArmor = (armors) => {
-    reset();
+export const displayMatchingArmor = (matchingArmor) => {
+    resetArmorList();
 
     let filter = document.getElementById("skillsList").value;
 
@@ -103,7 +104,7 @@ export const displayMatchingArmor = (armors) => {
     
     // Check to see if the current skillList.value matches a filter. If so, display all armor pieces in that filter
     if (filterArmor[filter]) {
-        filterArmor[filter](armors);
+        filterArmor[filter](matchingArmor);
         // Display message if no matches
         if (armorListElement.children.length === 0) {
             armorListElement.appendChild(noMatchMessage);
@@ -111,24 +112,10 @@ export const displayMatchingArmor = (armors) => {
     }
     
     else if (filter === "all"){
-        displayArmorList(armors);
+        displayArmorList(matchingArmor);
     }
 
     else {
-        reset();
+        resetArmorList();
     } 
-};
-
-/* ========== Supplementary Functions ========== */
-
-function reset() {
-    armorListElement.innerHTML = "";
-}
-
-function showLoadingIndicator() {
-    loadingIndicator.style.display = "block";
-};
-
-function hideLoadingIndicator() {
-    loadingIndicator.style.display = "none";
 };
