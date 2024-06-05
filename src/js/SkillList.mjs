@@ -17,6 +17,7 @@ export const getSkills = async () => {
         displaySkills(skillsList);
     }
     catch (error) {
+        // eslint-disable-next-line no-console
         console.error("Failed to load skill list:", error);        
     }
 };
