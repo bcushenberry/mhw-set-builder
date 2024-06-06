@@ -161,7 +161,7 @@ div {
 }
 
 #buildList h3 {
-  transform: translate(-25%);
+  transform: translate(-17%);
 }
 
 /* Class Selectors */
@@ -192,10 +192,6 @@ div {
   .armor-buttons {
     position: absolute;
     transform: translate(400%);
-  }
-  
-  #buildList h3 {
-    transform: translate(-17%);
   }
 
   #armorList dt {
