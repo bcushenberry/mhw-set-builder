@@ -199,6 +199,11 @@ div {
   }
 }
 
+#buildList img {
+  transform: translate(-225%);
+}
+
+
 @media only screen and (min-width: 700px) {
   #home > section:nth-child(2) {
     display: grid;
