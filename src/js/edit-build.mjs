@@ -6,12 +6,6 @@ export function createAddButton(key, data) {
     let addButton = document.createElement("button");
     addButton.setAttribute("class", "buttons")
     addButton.textContent = " + ";
-    addButton.addEventListener("touchend", (event) => {
-      event.preventDefault(); 
-      setLocalStorage(key, data);
-      updateBuild(key, data);
-    });
-
     addButton.addEventListener("click", () => {
       setLocalStorage(key, data)
       updateBuild(key, data);
@@ -24,16 +18,9 @@ export function createAddButton(key, data) {
 export function createRemoveButton(key) {
     let removeButton = document.createElement("button");
     removeButton.setAttribute("class", "buttons")
-    removeButton.textContent = " - ";
-    removeButton.addEventListener("touchend", (event) => {
-      if (event.cancelable) {
-        event.preventDefault();
-      }
-      setLocalStorage(key, "");
-    });
-    
+    removeButton.textContent = " - ";   
     removeButton.addEventListener("click", () => {
-      setLocalStorage(key, "")
+      setLocalStorage(key, [])
       updateBuild(key, [])
     });
     

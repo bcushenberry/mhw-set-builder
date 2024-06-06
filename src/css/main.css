@@ -193,14 +193,14 @@ div {
     position: absolute;
     transform: translate(400%);
   }
+  
+  #buildList h3 {
+    transform: translate(-17%);
+  }
 
   #armorList dt {
     transform: translate(-10%)
   }
-}
-
-#buildList img {
-  transform: translate(-225%);
 }
 
 

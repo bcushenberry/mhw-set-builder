@@ -17,7 +17,10 @@ export const displayBuild = () => {
         if (slotData && slotData.length > 0) {
             armorNameElement.textContent = slotData[0];
             slotData[1].forEach(skill => {
-                armorSkillsElement.textContent = `${skill.skillName} Lv. ${skill.level}`;
+                const skillElement = document.createElement("span");
+                skillElement.textContent = `${skill.skillName} Lv. ${skill.level}`;
+                armorSkillsElement.appendChild(skillElement);
+                armorSkillsElement.appendChild(document.createElement("br"));
             });
 
         } else {
