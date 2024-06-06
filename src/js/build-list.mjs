@@ -1,4 +1,4 @@
-import { getLocalStorage, setLocalStorage } from "./EditBuild.mjs";  
+import { getLocalStorage, setLocalStorage } from "./edit-build.mjs";  
 
 // Display the build stored in localStorage
 export const displayBuild = () => {

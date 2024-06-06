@@ -1,7 +1,7 @@
-import { getSkills } from "./SkillList.mjs";
-import { getArmorList, displayMatchingArmor, armorList } from "./ArmorList.mjs";
+import { getSkills } from "./skill-list.mjs";
+import { getArmorList, displayMatchingArmor, armorList } from "./armor-list.mjs";
 
-import { displayBuild } from "./BuildList.mjs";
+import { displayBuild } from "./build-list.mjs";
 
 document.onload = displayBuild();
 

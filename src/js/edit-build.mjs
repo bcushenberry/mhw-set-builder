@@ -1,4 +1,4 @@
-import { updateBuild } from "./BuildList.mjs";
+import { updateBuild } from "./build-list.mjs";
 
 // TODO: Make the Add/RemoveButton functions more elegant / less redundant
 // Create the add button to add an item to your build (localstorage)

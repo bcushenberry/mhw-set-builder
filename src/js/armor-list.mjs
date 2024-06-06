@@ -1,7 +1,7 @@
-import { skillsList  } from "./SkillList.mjs"
-import { selectedRank } from "./RadioValue.mjs"
-import { createAddButton, createRemoveButton } from "./EditBuild.mjs";
-import { armorListElement, resetArmorList, showLoadingIndicator, hideLoadingIndicator } from "./Utils.mjs";
+import { skillsList  } from "./skill-list.mjs"
+import { selectedRank } from "./radio-values.mjs"
+import { createAddButton, createRemoveButton } from "./edit-build.mjs";
+import { armorListElement, resetArmorList, showLoadingIndicator, hideLoadingIndicator } from "./utils.mjs";
 
 export const rankElement = document.getElementById("rank")
 export let armorList = [];

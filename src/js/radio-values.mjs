@@ -1,4 +1,4 @@
-import { displayMatchingArmor, armorList } from "./ArmorList.mjs";
+import { displayMatchingArmor, armorList } from "./armor-list.mjs";
 
 export let selectedRank = "low";
 
